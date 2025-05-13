@@ -1,11 +1,13 @@
-import { useState } from 'react'
+
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import mainLogo from './assets/logo-2.png'
 import './App.css'
+import { CountDown } from './Components/CountDown'
+import { CountDownV2 } from './Components/CountDownV2'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
@@ -17,9 +19,7 @@ function App() {
       </div>
       <h1>Sap CountDown</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          Count HH:MM:SS 
-        </button>
+        <CountDownV2/>
         <p>
           ....Comming soon
         </p>
