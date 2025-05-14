@@ -6,8 +6,8 @@
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 4em;
+  padding: 0.5em;
   will-change: filter;
   transition: filter 300ms;
 }
@@ -28,13 +28,13 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .logo {
+    animation: logo-spin  8s linear;
   }
 }
 
 .card {
-  padding: 2em;
+  padding: 0.1em;
 }
 
 .read-the-docs {

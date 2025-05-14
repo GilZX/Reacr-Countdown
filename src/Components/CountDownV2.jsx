@@ -36,13 +36,11 @@ export const CountDownV2 = () => {
   }, []);
 
   return (
-    <div style={{ fontSize: '4rem', fontFamily: 'monospace', textAlign: 'center' }}>
+    <div style={{ color:'#66bb6a',  fontSize: '4rem', fontFamily: 'monospace', textAlign: 'center' }}>
       <div>
         <h2> {timeLeft.Dias}:{timeLeft.Horas}:{timeLeft.Minutos}:{timeLeft.Segundos}</h2>
       </div>
-      <div style={{ fontSize: '1rem', marginTop: '0.5rem' }}>
-        Días : Horas : Minutos : Segundos
-      </div>
+      
     </div>
   );
 };
