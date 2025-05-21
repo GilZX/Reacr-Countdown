@@ -3,8 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import mainLogo from './assets/logo-2.png'
 import './App.css'
-import { CountDown } from './Components/CountDown'
-import { CountDownV2 } from './Components/CountDownV2'
+import { Contador } from './Components/Contador'
 import { Frase } from './Components/Frase'
 import writerLogo from './assets/writer.png'
 import AlertTitle from '@mui/material/AlertTitle';
@@ -24,9 +23,10 @@ function App() {
       </div>
     
       <div className="card">
-        <h1>Sap CountDown</h1>
-        <CountDownV2/>
-        <Frase></Frase>
+        <h1>Sap CountDown  <Frase></Frase> </h1> 
+        <Contador tipo="reversa" fecha="01/06/2025" />
+        <Contador tipo="progresivo" fecha="01/06/2025" />
+        
       </div>
       
      

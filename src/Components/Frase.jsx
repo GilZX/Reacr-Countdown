@@ -1,49 +1,48 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import CardActionArea from '@mui/material/CardActionArea';
-
-const cards = [
-  {
-    id: 1,
-    title: 'No te enlleves',
-    description: 'BY Luisito',
-  },
-];
+import React, { useState } from 'react';
 
 export function Frase() {
-  const [selectedCard, setSelectedCard] = React.useState(0);
+
+
+
+
+
+  const frases = [
+    {title: 'No te enlleves',description: 'BY Luisito'},
+    {title:"La Tecnologia a Avanzado Mucho.",description:"by luisito"},
+  ]
+  const [random] = useState(() => Math.floor(Math.random() * frases.length));
+  
+
+
+  const estiloContenedor = {
+    border: '2px solid rgb(25, 210, 118)',
+    borderRadius: '8px',
+    padding: '16px',
+    backgroundColor: '#f9f9f9',
+    width: 'fit-content',
+    margin: '10px auto',
+    fontFamily: 'Arial, sans-serif',
+    textAlign: 'center',
+  };
+
+  const estiloTitulo = {
+    fontSize: '20px',
+    fontWeight: 'bold',
+    marginBottom: '8px',
+    color: '#333',
+  };
+
+  const estiloDescripcion = {
+    fontSize: '14px',
+    color: '#555',
+  };
+
+
+
   return (
-    <Box padding={'0.1em'}>
-      {cards.map((card, index) => (
-        <Card>
-          <CardActionArea
-            onClick={() => setSelectedCard(index)}
-            data-active={selectedCard === index ? '' : undefined}
-            sx={{
-              height: '100%',
-              '&[data-active]': {
-                backgroundColor: 'action.selected',
-                '&:hover': {
-                  backgroundColor: 'action.selectedHover',
-                },
-              },
-            }}
-          >
-            <CardContent sx={{ height: '100%', width: '100%',  alignContent:'center'}}>
-              <Typography variant="h5" component="div">
-                {card.title}
-              </Typography>
-              <Typography variant="body1" color="text.secondary">
-                {card.description}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      ))}
-    </Box>
+    <div style={estiloContenedor}>
+      <div style={estiloTitulo}>{frases[random].title}</div>
+      <div style={estiloDescripcion}>{frases[random].description}</div>
+    </div>
   );
 }
-
