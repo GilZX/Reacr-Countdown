@@ -24,9 +24,11 @@ function App() {
     
       <div className="card">
         <h1>Sap CountDown  <Frase></Frase> </h1> 
-        <Contador tipo="reversa" fecha="01/06/2025" />
-        <Contador tipo="progresivo" fecha="01/06/2025" />
-        
+        <Contador label="general" tipo="reversa" fecha="01/06/2025" />
+        <Contador  label="incompetencia" tipo="progresivo" fecha="01/06/2025" />
+        <Contador label="FACEGI" tipo="reversa" fecha="01/07/2025" />
+        <Contador label="LABOCEGI" tipo="reversa" fecha="01/09/2025" />
+        <Contador label="CEGI" tipo="reversa" fecha="01/11/2025" />
       </div>
       
      

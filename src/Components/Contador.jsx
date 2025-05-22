@@ -9,7 +9,7 @@ import React,{ useState,useEffect } from "react"
     gap: "8px",
   };
 
-export function Contador({ tipo = "reversa", fecha }){
+export function Contador({ tipo = "reversa", fecha,label }){
     const [activo, setActivo] = useState(true);
     const [tiempo, setTiempo] = useState({
         dias: "00",
@@ -88,7 +88,9 @@ return (
     marginBottom:"8px"
   }
     }>
+      <strong>{label}</strong>
     <h2>
+      
         {tiempo.dias}:{tiempo.horas}:{tiempo.minutos}:{tiempo.segundos}
     </h2>
     <div style={estiloWarning}>
