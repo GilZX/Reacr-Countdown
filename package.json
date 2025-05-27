@@ -13,6 +13,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^7.1.0",
+    "@mui/x-data-grid": "^8.4.0",
     "@number-flow/react": "^0.5.9",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

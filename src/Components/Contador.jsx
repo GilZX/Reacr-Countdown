@@ -1,31 +1,32 @@
-import React,{ useState,useEffect } from "react"
-  const estiloWarning = {
-    marginTop: "15px",
-    fontSize: "10px",
-    color: "#d32f2f",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "8px",
-  };
+import React, { useState, useEffect } from "react"
 
-export function Contador({ tipo = "reversa", fecha,label }){
-    const [activo, setActivo] = useState(true);
-    const [tiempo, setTiempo] = useState({
-        dias: "00",
-        horas: "00",
-        minutos: "00",
-        segundos: "00",
-     });
+const estiloWarning = {
+  marginTop: "15px",
+  fontSize: "10px",
+  color: "#d32f2f",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "8px",
+};
+
+export function Contador({ tipo = "reversa", fecha, label, color_style="#333"   }) {
+  const [activo, setActivo] = useState(true);
+  const [tiempo, setTiempo] = useState({
+    dias: "00",
+    horas: "00",
+    minutos: "00",
+    segundos: "00",
+  });
 
 
 
-useEffect(()=>{
+  useEffect(() => {
 
     const partes = fecha.split("/");
     const targetFecha = new Date(
       `${partes[2]}-${partes[1]}-${partes[0]}T00:00:00`
-    ); 
+    );
 
     const actualizarTiempo = () => {
       const ahora = new Date();
@@ -34,7 +35,7 @@ useEffect(()=>{
       if (tipo === "reversa") {
         diferencia = targetFecha - ahora;
 
-      
+
         if (diferencia <= 0) {
           clearInterval(intervalo);
           setActivo(false);
@@ -71,33 +72,33 @@ useEffect(()=>{
     return () => clearInterval(intervalo);
   }, [fecha, tipo]);
 
-return (
+  return (
 
     <div style={
-        {
-    border: "2px solid #1976d2", // Azul Material UI
-    padding: "20px",
-    borderRadius: "8px",
-    display: "block",
-    fontFamily: "monospace",
-    fontSize: "24px",
-    backgroundColor: "#f5f5f5",
-    textAlign: "center",
-    color: "#333",
-    minWidth: "300px",
-    marginBottom:"8px"
-  }
-    }>
+      {
+        border: "2px solid #1976d2", // Azul Material UI
+        padding: "20px",
+        borderRadius: "8px",
+        fontFamily: "monospace",
+        fontSize: "24px",
+        backgroundColor: "#f5f5f5",
+        textAlign: "center",
+        minWidth: "300px",
+        marginBottom: "8px",
+      textShadow: `0 0 8px ${color_style}`,
+      color:`${color_style}`
+    }}>
+
       <strong>{label}</strong>
-    <h2>
-      
+      <h2>
+
         {tiempo.dias}:{tiempo.horas}:{tiempo.minutos}:{tiempo.segundos}
-    </h2>
-    <div style={estiloWarning}>
+      </h2>
+      <div style={estiloWarning}>
         ⚠️ <span>Fecha objetivo: {fecha}</span>
       </div>
     </div>
 
-)
+  )
 
 }

@@ -7,11 +7,11 @@ export function Frase() {
 
 
   const frases = [
-    {title: 'No te enlleves',description: 'BY Luisito'},
-    {title:"La Tecnologia a Avanzado Mucho.",description:"by luisito"},
+    { title: 'No te enlleves', description: 'BY Luisito' },
+    { title: "La Tecnologia a Avanzado Mucho.", description: "by luisito" },
   ]
   const [random] = useState(() => Math.floor(Math.random() * frases.length));
-  
+
 
 
   const estiloContenedor = {
@@ -23,6 +23,8 @@ export function Frase() {
     margin: '10px auto',
     fontFamily: 'Arial, sans-serif',
     textAlign: 'center',
+    gridTemplateColumns: "repeat(3, 1fr)", // 3 columnas
+  gap: "16px", // espacio entre columnas y filas
   };
 
   const estiloTitulo = {
