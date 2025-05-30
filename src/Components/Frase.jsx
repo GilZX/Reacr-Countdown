@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 export function Frase() {
 
 
+  const [frases, setFrases] = useState([]);
+
+  const [random,setRandom] = useState(0);
 
 
+  useEffect(() => {
+    fetch('https://sapcountdownrestapi.onrender.com/frases')
+      .then(res => res.json())
+      .then(data => {
+        setFrases(data);
+        setRandom(Math.floor(Math.random() * data.length));
+      })
+      .catch(err => {
+        console.error("Error al cargar frases:", err);
+      });
 
-  const frases = [
-    { title: 'No te enlleves', description: 'BY Luisito' },
-    { title: "La Tecnologia a Avanzado Mucho.", description: "by luisito" },
-  ]
-  const [random] = useState(() => Math.floor(Math.random() * frases.length));
-
+  }, []);
 
 
   const estiloContenedor = {
@@ -24,7 +32,7 @@ export function Frase() {
     fontFamily: 'Arial, sans-serif',
     textAlign: 'center',
     gridTemplateColumns: "repeat(3, 1fr)", // 3 columnas
-  gap: "16px", // espacio entre columnas y filas
+    gap: "16px", // espacio entre columnas y filas
   };
 
   const estiloTitulo = {
@@ -39,12 +47,12 @@ export function Frase() {
     color: '#555',
   };
 
-
+  const frase = frases[random];
 
   return (
     <div style={estiloContenedor}>
-      <div style={estiloTitulo}>{frases[random].title}</div>
-      <div style={estiloDescripcion}>{frases[random].description}</div>
+      <div style={estiloTitulo}>{frase.author}</div>
+      <div style={estiloDescripcion}>{frase.description}</div>
     </div>
   );
 }

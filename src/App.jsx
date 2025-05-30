@@ -2,7 +2,6 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import mainLogo from './assets/logo-2.png'
-import { DataGrid } from '@mui/x-data-grid';
 import './App.css'
 import { Contador } from './Components/Contador'
 import { Frase } from './Components/Frase'
