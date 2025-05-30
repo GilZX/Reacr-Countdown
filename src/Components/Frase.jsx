@@ -51,8 +51,8 @@ export function Frase() {
 
   return (
     <div style={estiloContenedor}>
-      <div style={estiloTitulo}>{frase.author}</div>
-      <div style={estiloDescripcion}>{frase.description}</div>
+      <div style={estiloTitulo}>{frases.length==0 ? "Cargando frases...": frase.author}</div>
+      <div style={estiloDescripcion}>{frases.length==0 ? "Cargando frases... ":frase.description}</div>
     </div>
   );
 }

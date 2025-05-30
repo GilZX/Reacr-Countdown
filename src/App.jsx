@@ -28,30 +28,33 @@ function App() {
 
       <div className="card">
 
-      
-       
-       
-        
-       
+
+
+
+
+
       </div>
 
 
 
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
         <Grid size={12}>
-         <Contador label="GENERAL" tipo="reversa" fecha="01/06/2025"  color_style='#1976d2' />
+          <Contador label="GENERAL" tipo="reversa" fecha="01/06/2025" color_style='#1976d2' />
         </Grid>
         <Grid size={6}>
           <Contador label="IMCONPETENCIA" tipo="progresivo" fecha="01/06/2025" color_style='red' />
         </Grid>
         <Grid size={6}>
-           <Contador label="FACEGI" tipo="reversa" fecha="01/07/2025" color_style='#808000' />
+          <Contador label="FACEGI" tipo="reversa" fecha="01/07/2025" color_style='#808000' />
         </Grid>
         <Grid size={6}>
-         <Contador label="LABOCEGI" tipo="reversa" fecha="01/09/2025" color_style='#9370DB' />
+          <Contador label="LABOCEGI" tipo="reversa" fecha="01/09/2025" color_style='#9370DB' />
         </Grid>
         <Grid size={6}>
-           <Contador label="CEGI" tipo="reversa" fecha="01/11/2025" />
+          <Contador label="CEGI" tipo="reversa" fecha="01/11/2025" />
+        </Grid>
+        <Grid size={12}>
+          <Contador label="DBA" tipo="PROGRESIVO" fecha="02/06/2025"  color_style='#808000'/>
         </Grid>
       </Grid>
 
