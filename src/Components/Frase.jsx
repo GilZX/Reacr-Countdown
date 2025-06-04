@@ -5,15 +5,18 @@ export function Frase() {
 
   const [frases, setFrases] = useState([]);
 
-  const [random,setRandom] = useState(0);
+ function getRandomFrase(lim){
 
+    return Math.floor(Math.random()* (lim + 1) )
+ }
+
+ 
 
   useEffect(() => {
     fetch('https://sapcountdownrestapi.onrender.com/frases')
       .then(res => res.json())
       .then(data => {
         setFrases(data);
-        setRandom(Math.floor(Math.random() * data.length));
       })
       .catch(err => {
         console.error("Error al cargar frases:", err);
@@ -21,6 +24,7 @@ export function Frase() {
 
   }, []);
 
+ const frase = frases[getRandomFrase(frases.length)];
 
   const estiloContenedor = {
     border: '2px solid rgb(25, 210, 118)',
@@ -47,7 +51,7 @@ export function Frase() {
     color: '#555',
   };
 
-  const frase = frases[random];
+
 
   return (
     <div style={estiloContenedor}>
