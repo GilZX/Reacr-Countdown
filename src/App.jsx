@@ -29,13 +29,7 @@ function App() {
       <div className="card">
 
 
-
-
-
-
       </div>
-
-
 
       <Grid container spacing={2}>
         <Grid size={12}>
